@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-04 10:34:24 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVBFVUZNVTM7MjAyMS0wMy0wNDsxMDoyMjo1NCBQTTszMzYy"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVBFVUZNVTM7MjAyMS0wMy0wNDsxMDozNDoyNCBQTTsxOzM0NzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="numofhits" type="Real" array="False" size=""/>
+            <declare name="battingavg" type="Real" array="False" size=""/>
+            <declare name="atbat" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter players last name&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;Enter number of hits&quot;" newline="True"/>
+            <input variable="numofhits"/>
+            <output expression="&quot;Enter number of bats&quot;" newline="True"/>
+            <input variable="atbat"/>
+            <call expression="compaverage(numofhits, atbat)"/>
+            <assign variable="battingavg" expression="compaverage(numofhits, atbat)"/>
+            <output expression="&quot;Player's last name: &quot; &amp; lastname &amp; &quot; ,&quot;&#13;&#10;&amp; &quot; Batting average: &quot; &amp; battingavg" newline="True"/>
+        </body>
+    </function>
+    <function name="compaverage" type="Real" variable="battingavg">
+        <parameters>
+            <parameter name="numofhits" type="Real" array="False"/>
+            <parameter name="atbat" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="battingavg" type="Real" array="False" size=""/>
+            <assign variable="battingavg" expression="(numofhits + atbat)/2"/>
+        </body>
+    </function>
+</flowgorithm>
